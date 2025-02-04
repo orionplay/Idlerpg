@@ -86,3 +86,13 @@ li.selected {
 span {
   margin-right: 5px;
 }
+
+input[type="radio"] {
+  display: none;
+}
+
+input[type="radio"]:checked + label::before {
+  content: '⬤';
+  color: green;
+  margin-right: 5px;
+}
