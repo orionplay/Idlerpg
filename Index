@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Idle RPG</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Idle RPG</h1>
+    <div id="game">
+      <p>Nível: <span id="level">1</span></p>
+      <p>Exp: <span id="exp">0</span>/<span id="exp-next">100</span></p>
+      <button id="work-button">Trabalhar</button>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
