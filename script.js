@@ -21,15 +21,11 @@ for (let job in jobs) {
   jobXP[job] = 0;
 }
 
-document.getElementById('job-list').addEventListener('click', function(e) {
-  if (e.target.tagName === 'BUTTON') {
+document.getElementById('job-list').addEventListener('change', function(e) {
+  if (e.target.tagName === 'INPUT') {
     const selectedJob = e.target.parentElement.getAttribute('data-job');
     selectJob(selectedJob);
   }
-});
-
-document.getElementById('start-button').addEventListener('click', function() {
-  startWorking();
 });
 
 function selectJob(job) {
@@ -40,7 +36,7 @@ function selectJob(job) {
   jobItems.forEach(item => item.classList.remove('selected'));
   document.querySelector(`[data-job="${job}"]`).classList.add('selected');
   
-  document.getElementById('start-button').disabled = false;
+  startWorking();
 }
 
 function startWorking() {
@@ -49,32 +45,4 @@ function startWorking() {
       jobXP[currentJob] += jobs[currentJob].xpRate;
       if (jobXP[currentJob] >= xpNext) {
         levelUp();
-      }
-      updateUI();
-    }
-  }, 1000); // Ganha XP a cada 1 segundo
-}
-
-function levelUp() {
-  jobXP[currentJob] = 0;
-  jobLevels[currentJob]++;
-  xpNext += 50; // Aumenta a quantidade necessária de XP para o próximo nível
-}
-
-function updateUI() {
-  for (let job in jobs) {
-    const xpBar = document.getElementById(`xp-bar-${job}`);
-    const level = document.getElementById(`level-${job}`);
-    const fillPercent = (jobXP[job] / xpNext) * 100;
-    if (xpBar) {
-      xpBar.innerHTML = `<div class="xp-bar-fill" style="width: ${fillPercent}%;"></div>`;
-    }
-    if (level) {
-      level.innerText = jobLevels[job];
-    }
-  }
-  document.getElementById('xp').innerText = xp;
-  document.getElementById('xp-next').innerText = xpNext;
-}
-
-// Atualiza a interface do jogo[_{{{CITATION{{{_1{](https://github.com/ermogenes/aulas-programacao-web/tree/291ef22fb4301268f9fc58b622726be720205738/content%2Fhello-world-gh-pages.md)[_{{{CITATION{{{_2{](https://github.com/ricardo-cas/pandas/tree/eefd8f3ed9250c15e029b7ae59a24ef9f7ffc4ab/GUIA_MARKDOWN.MD)
+[_{{{CITATION{{{_1{](https://github.com/ermogenes/aulas-programacao-web/tree/291ef22fb4301268f9fc58b622726be720205738/content%2Fhello-world-gh-pages.md)[_{{{CITATION{{{_2{](https://github.com/ricardo-cas/pandas/tree/eefd8f3ed9250c15e029b7ae59a24ef9f7ffc4ab/GUIA_MARKDOWN.MD)
