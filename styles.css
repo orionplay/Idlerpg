@@ -61,8 +61,8 @@ li:hover {
 
 label {
   display: inline-block;
-  width: 20px;
-  height: 20px;
+  width: 30px; /* Aumenta o tamanho das bolinhas */
+  height: 30px;
   background-color: #fff;
   border-radius: 50%;
   border: 2px solid #007bff;
