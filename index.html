@@ -23,69 +23,7 @@
             <span id="level-farmer">1</span>
             <span class="money">5 cobre</span>
           </li>
-          <li data-job="miner">
-            <label for="job-miner"></label>
-            <span>Mineiro</span>
-            <span class="xp-bar" id="xp-bar-miner"></span>
-            <span id="level-miner">1</span>
-            <span class="money">6 cobre</span>
-          </li>
-          <li data-job="woodcutter">
-            <label for="job-woodcutter"></label>
-            <span>Lenhador</span>
-            <span class="xp-bar" id="xp-bar-woodcutter"></span>
-            <span id="level-woodcutter">1</span>
-            <span class="money">4 cobre</span>
-          </li>
-          <li data-job="fisherman">
-            <label for="job-fisherman"></label>
-            <span>Pescador</span>
-            <span class="xp-bar" id="xp-bar-fisherman"></span>
-            <span id="level-fisherman">1</span>
-            <span class="money">7 cobre</span>
-          </li>
-          <li data-job="blacksmith">
-            <label for="job-blacksmith"></label>
-            <span>Ferreiro</span>
-            <span class="xp-bar" id="xp-bar-blacksmith"></span>
-            <span id="level-blacksmith">1</span>
-            <span class="money">8 cobre</span>
-          </li>
-          <li data-job="hunter">
-            <label for="job-hunter"></label>
-            <span>Caçador</span>
-            <span class="xp-bar" id="xp-bar-hunter"></span>
-            <span id="level-hunter">1</span>
-            <span class="money">5 cobre</span>
-          </li>
-          <li data-job="builder">
-            <label for="job-builder"></label>
-            <span>Construtor</span>
-            <span class="xp-bar" id="xp-bar-builder"></span>
-            <span id="level-builder">1</span>
-            <span class="money">6 cobre</span>
-          </li>
-          <li data-job="tailor">
-            <label for="job-tailor"></label>
-            <span>Alfaiate</span>
-            <span class="xp-bar" id="xp-bar-tailor"></span>
-            <span id="level-tailor">1</span>
-            <span class="money">4 cobre</span>
-          </li>
-          <li data-job="merchant">
-            <label for="job-merchant"></label>
-            <span>Comerciante</span>
-            <span class="xp-bar" id="xp-bar-merchant"></span>
-            <span id="level-merchant">1</span>
-            <span class="money">7 cobre</span>
-          </li>
-          <li data-job="guard">
-            <label for="job-guard"></label>
-            <span>Guarda</span>
-            <span class="xp-bar" id="xp-bar-guard"></span>
-            <span id="level-guard">1</span>
-            <span class="money">8 cobre</span>
-          </li>
+          <!-- outros trabalhos -->
         </ul>
       </div>
       <div id="Lazer" class="tabcontent">
@@ -95,27 +33,29 @@
             <span>Descansar</span>
             <span class="money">2 cobre/dia</span>
           </li>
-          <li data-leisure="read">
-            <label for="leisure-read"></label>
-            <span>Ler</span>
-            <span class="money">3 cobre/dia</span>
-          </li>
-          <li data-leisure="exercise">
-            <label for="leisure-exercise"></label>
-            <span>Exercitar-se</span>
-            <span class="money">4 cobre/dia</span>
-          </li>
-          <li data-leisure="play-games">
-            <label for="leisure-play-games"></label>
-            <span>Jogar</span>
-            <span class="money">5 cobre/dia</span>
-          </li>
-          <li data-leisure="watch-movies">
-            <label for="leisure-watch-movies"></label>
-            <span>Assistir Filmes</span>
-            <span class="money">6 cobre/dia</span>
-          </li>
-          <li data-leisure="cook">
-            <label for="leisure-cook"></label>
-            <span>Cozinhar</span>
-            <span class="money
+          <!-- outras atividades de lazer -->
+        </ul>
+      </div>
+    </div>
+  </div>
+  <script>
+    function openTab(evt, tabName) {
+      const tabcontent = document.getElementsByClassName("tabcontent");
+      for (let i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+      }
+      const tablinks = document.getElementsByClassName("tablinks");
+      for (let i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+      }
+      document.getElementById(tabName).style.display = "block";
+      evt.currentTarget.className += " active";
+    }
+
+    // Abre a aba "Trabalhos" por padrão
+    document.addEventListener("DOMContentLoaded", function() {
+      document.querySelector(".tablinks").click();
+    });
+  </script>
+</body>
+</html>
