@@ -11,21 +11,21 @@
     <h1>Idle RPG</h1>
     <div id="game">
       <p>Escolha seu trabalho:</p>
-      <select id="job-select">
-        <option value="farmer">Fazendeiro</option>
-        <option value="miner">Mineiro</option>
-        <option value="woodcutter">Lenhador</option>
-        <option value="fisherman">Pescador</option>
-        <option value="blacksmith">Ferreiro</option>
-        <option value="hunter">Caçador</option>
-        <option value="builder">Construtor</option>
-        <option value="tailor">Alfaiate</option>
-        <option value="merchant">Comerciante</option>
-        <option value="guard">Guarda</option>
-      </select>
+      <ul id="job-list">
+        <li data-job="farmer">Fazendeiro</li>
+        <li data-job="miner">Mineiro</li>
+        <li data-job="woodcutter">Lenhador</li>
+        <li data-job="fisherman">Pescador</li>
+        <li data-job="blacksmith">Ferreiro</li>
+        <li data-job="hunter">Caçador</li>
+        <li data-job="builder">Construtor</li>
+        <li data-job="tailor">Alfaiate</li>
+        <li data-job="merchant">Comerciante</li>
+        <li data-job="guard">Guarda</li>
+      </ul>
       <p>Trabalho atual: <span id="current-job">Nenhum</span></p>
       <p>XP: <span id="xp">0</span>/<span id="xp-next">100</span></p>
-      <button id="start-button">Começar a trabalhar</button>
+      <button id="start-button" disabled>Começar a trabalhar</button>
     </div>
   </div>
   <script src="script.js"></script>
