@@ -15,12 +15,27 @@ const jobs = {
   guard: { name: 'Guarda', xpRate: 8 },
 };
 
+document.getElementById('job-list').addEventListener('click', function(e) {
+  if (e.target.tagName === 'LI') {
+    const selectedJob = e.target.getAttribute('data-job');
+    selectJob(selectedJob);
+  }
+});
+
 document.getElementById('start-button').addEventListener('click', function() {
-  const selectedJob = document.getElementById('job-select').value;
-  currentJob = selectedJob;
-  document.getElementById('current-job').innerText = jobs[currentJob].name;
   startWorking();
 });
+
+function selectJob(job) {
+  currentJob = job;
+  document.getElementById('current-job').innerText = jobs[currentJob].name;
+  
+  const jobItems = document.querySelectorAll('#job-list li');
+  jobItems.forEach(item => item.classList.remove('selected'));
+  document.querySelector(`[data-job="${job}"]`).classList.add('selected');
+  
+  document.getElementById('start-button').disabled = false;
+}
 
 function startWorking() {
   setInterval(function() {
