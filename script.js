@@ -22,8 +22,8 @@ for (let job in jobs) {
 }
 
 document.getElementById('job-list').addEventListener('click', function(e) {
-  if (e.target.tagName === 'LI' || e.target.parentElement.tagName === 'LI') {
-    const selectedJob = (e.target.tagName === 'LI' ? e.target : e.target.parentElement).getAttribute('data-job');
+  if (e.target.tagName === 'BUTTON') {
+    const selectedJob = e.target.parentElement.getAttribute('data-job');
     selectJob(selectedJob);
   }
 });
@@ -77,5 +77,4 @@ function updateUI() {
   document.getElementById('xp-next').innerText = xpNext;
 }
 
-// Atualiza a interface do jogo ao iniciar
-updateUI();
+// Atualiza a interface do jogo[_{{{CITATION{{{_1{](https://github.com/ermogenes/aulas-programacao-web/tree/291ef22fb4301268f9fc58b622726be720205738/content%2Fhello-world-gh-pages.md)[_{{{CITATION{{{_2{](https://github.com/ricardo-cas/pandas/tree/eefd8f3ed9250c15e029b7ae59a24ef9f7ffc4ab/GUIA_MARKDOWN.MD)
