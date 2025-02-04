@@ -10,85 +10,129 @@
   <div class="container">
     <h1>Idle RPG</h1>
     <div id="game">
-      <p>Escolha seu trabalho:</p>
       <div class="tab">
         <button class="tablinks" onclick="openTab(event, 'Trabalhos')">Trabalhos</button>
+        <button class="tablinks" onclick="openTab(event, 'Lazer')">Lazer</button>
       </div>
       <div id="Trabalhos" class="tabcontent">
         <ul id="job-list">
           <li data-job="farmer">
-            <input type="radio" name="job" id="job-farmer">
             <label for="job-farmer"></label>
             <span>Fazendeiro</span>
             <span class="xp-bar" id="xp-bar-farmer"></span>
             <span id="level-farmer">1</span>
+            <span class="money">5 cobre</span>
           </li>
           <li data-job="miner">
-            <input type="radio" name="job" id="job-miner">
             <label for="job-miner"></label>
             <span>Mineiro</span>
             <span class="xp-bar" id="xp-bar-miner"></span>
             <span id="level-miner">1</span>
+            <span class="money">6 cobre</span>
           </li>
           <li data-job="woodcutter">
-            <input type="radio" name="job" id="job-woodcutter">
             <label for="job-woodcutter"></label>
             <span>Lenhador</span>
             <span class="xp-bar" id="xp-bar-woodcutter"></span>
             <span id="level-woodcutter">1</span>
+            <span class="money">4 cobre</span>
           </li>
           <li data-job="fisherman">
-            <input type="radio" name="job" id="job-fisherman">
             <label for="job-fisherman"></label>
             <span>Pescador</span>
             <span class="xp-bar" id="xp-bar-fisherman"></span>
             <span id="level-fisherman">1</span>
+            <span class="money">7 cobre</span>
           </li>
           <li data-job="blacksmith">
-            <input type="radio" name="job" id="job-blacksmith">
             <label for="job-blacksmith"></label>
             <span>Ferreiro</span>
             <span class="xp-bar" id="xp-bar-blacksmith"></span>
             <span id="level-blacksmith">1</span>
+            <span class="money">8 cobre</span>
           </li>
           <li data-job="hunter">
-            <input type="radio" name="job" id="job-hunter">
             <label for="job-hunter"></label>
             <span>Caçador</span>
             <span class="xp-bar" id="xp-bar-hunter"></span>
             <span id="level-hunter">1</span>
+            <span class="money">5 cobre</span>
           </li>
           <li data-job="builder">
-            <input type="radio" name="job" id="job-builder">
             <label for="job-builder"></label>
             <span>Construtor</span>
             <span class="xp-bar" id="xp-bar-builder"></span>
             <span id="level-builder">1</span>
+            <span class="money">6 cobre</span>
           </li>
           <li data-job="tailor">
-            <input type="radio" name="job" id="job-tailor">
             <label for="job-tailor"></label>
             <span>Alfaiate</span>
             <span class="xp-bar" id="xp-bar-tailor"></span>
             <span id="level-tailor">1</span>
+            <span class="money">4 cobre</span>
           </li>
           <li data-job="merchant">
-            <input type="radio" name="job" id="job-merchant">
             <label for="job-merchant"></label>
             <span>Comerciante</span>
             <span class="xp-bar" id="xp-bar-merchant"></span>
             <span id="level-merchant">1</span>
+            <span class="money">7 cobre</span>
           </li>
           <li data-job="guard">
-            <input type="radio" name="job" id="job-guard">
             <label for="job-guard"></label>
             <span>Guarda</span>
             <span class="xp-bar" id="xp-bar-guard"></span>
             <span id="level-guard">1</span>
+            <span class="money">8 cobre</span>
           </li>
         </ul>
       </div>
-      <p>Trabalho atual: <span id="current-job">Nenhum</span></p>
+      <div id="Lazer" class="tabcontent">
+        <ul id="leisure-list">
+          <li data-leisure="rest">
+            <span>Descansar</span>
+            <span class="money">2 cobre/dia</span>
+          </li>
+          <li data-leisure="read">
+            <span>Ler</span>
+            <span class="money">3 cobre/dia</span>
+          </li>
+          <li data-leisure="exercise">
+            <span>Exercitar-se</span>
+            <span class="money">4 cobre/dia</span>
+          </li>
+          <li data-leisure="play-games">
+            <span>Jogar</span>
+            <span class="money">5 cobre/dia</span>
+          </li>
+          <li data-leisure="watch-movies">
+            <span>Assistir Filmes</span>
+            <span class="money">6 cobre/dia</span>
+          </li>
+          <li data-leisure="cook">
+            <span>Cozinhar</span>
+            <span class="money">3 cobre/dia</span>
+          </li>
+          <li data-leisure="socialize">
+            <span>Socializar</span>
+            <span class="money">5 cobre/dia</span>
+          </li>
+          <li data-leisure="travel">
+            <span>Viajar</span>
+            <span class="money">10 cobre/dia</span>
+          </li>
+          <li data-leisure="learn">
+            <span>Aprender</span>
+            <span class="money">4 cobre/dia</span>
+          </li>
+          <li data-leisure="hobby">
+            <span>Hobby</span>
+            <span class="money">3 cobre/dia</span>
+          </li>
+        </ul>
+      </div>
+      <p>Cronômetro: <span id="timer">0 dias</span></p>
     </div>
   </div>
   <script src="script.js"></script>
