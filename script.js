@@ -36,8 +36,8 @@ for (let job in jobs) {
   jobXP[job] = 0;
 }
 
-document.getElementById('job-list').addEventListener('change', function(e) {
-  if (e.target.tagName === 'INPUT') {
+document.getElementById('job-list').addEventListener('click', function(e) {
+  if (e.target.tagName === 'LABEL') {
     const selectedJob = e.target.parentElement.getAttribute('data-job');
     selectJob(selectedJob);
   }
@@ -45,8 +45,7 @@ document.getElementById('job-list').addEventListener('change', function(e) {
 
 function selectJob(job) {
   currentJob = job;
-  document.getElementById('current-job').innerText = jobs[currentJob].name;
-  
+
   const jobItems = document.querySelectorAll('#job-list li');
   jobItems.forEach(item => item.classList.remove('selected'));
   document.querySelector(`[data-job="${job}"]`).classList.add('selected');
@@ -115,3 +114,22 @@ setInterval(function() {
   days++;
   updateUI();
 }, 1000); // Cada dia é um segundo na vida real
+
+function openTab(evt, tabName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(tabName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+
+// Abrir a aba de Trabalhos por padrão
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelector('.tablinks').click();
+});
