@@ -1,7 +1,8 @@
 let currentJob = '';
 let xp = 0;
 let xpNext = 100;
-
+const jobLevels = {};
+const jobXP = {};
 const jobs = {
   farmer: { name: 'Fazendeiro', xpRate: 5 },
   miner: { name: 'Mineiro', xpRate: 6 },
@@ -15,9 +16,14 @@ const jobs = {
   guard: { name: 'Guarda', xpRate: 8 },
 };
 
+for (let job in jobs) {
+  jobLevels[job] = 1;
+  jobXP[job] = 0;
+}
+
 document.getElementById('job-list').addEventListener('click', function(e) {
-  if (e.target.tagName === 'LI') {
-    const selectedJob = e.target.getAttribute('data-job');
+  if (e.target.tagName === 'LI' || e.target.parentElement.tagName === 'LI') {
+    const selectedJob = (e.target.tagName === 'LI' ? e.target : e.target.parentElement).getAttribute('data-job');
     selectJob(selectedJob);
   }
 });
@@ -40,8 +46,8 @@ function selectJob(job) {
 function startWorking() {
   setInterval(function() {
     if (currentJob) {
-      xp += jobs[currentJob].xpRate;
-      if (xp >= xpNext) {
+      jobXP[currentJob] += jobs[currentJob].xpRate;
+      if (jobXP[currentJob] >= xpNext) {
         levelUp();
       }
       updateUI();
@@ -50,11 +56,23 @@ function startWorking() {
 }
 
 function levelUp() {
-  xp = 0;
+  jobXP[currentJob] = 0;
+  jobLevels[currentJob]++;
   xpNext += 50; // Aumenta a quantidade necessária de XP para o próximo nível
 }
 
 function updateUI() {
+  for (let job in jobs) {
+    const xpBar = document.getElementById(`xp-bar-${job}`);
+    const level = document.getElementById(`level-${job}`);
+    const fillPercent = (jobXP[job] / xpNext) * 100;
+    if (xpBar) {
+      xpBar.innerHTML = `<div class="xp-bar-fill" style="width: ${fillPercent}%;"></div>`;
+    }
+    if (level) {
+      level.innerText = jobLevels[job];
+    }
+  }
   document.getElementById('xp').innerText = xp;
   document.getElementById('xp-next').innerText = xpNext;
 }
