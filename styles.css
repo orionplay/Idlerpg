@@ -59,14 +59,18 @@ li:hover {
   background-color: #e9ecef;
 }
 
-li.selected {
-  background-color: #007bff;
-  color: white;
+label {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-color: #fff;
+  border-radius: 50%;
+  border: 2px solid #007bff;
+  margin-right: 10px;
 }
 
-.select-job {
-  margin-right: 10px; /* Espaçamento entre o botão e o nome do trabalho */
-  font-size: 10px; /* Fonte menor para o botão */
+li.selected label {
+  background-color: green;
 }
 
 .xp-bar {
@@ -87,12 +91,34 @@ span {
   margin-right: 5px;
 }
 
-input[type="radio"] {
-  display: none;
+.tab {
+  overflow: hidden;
+  border-bottom: 1px solid #ccc;
 }
 
-input[type="radio"]:checked + label::before {
-  content: '⬤';
-  color: green;
-  margin-right: 5px;
+.tab button {
+  background-color: inherit;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+}
+
+.tab button:hover {
+  background-color: #ddd;
+}
+
+.tab button.active {
+  background-color: #ccc;
+}
+
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border-top: none;
+}
+
+.money {
+  margin-left: auto;
 }
