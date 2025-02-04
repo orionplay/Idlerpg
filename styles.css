@@ -38,7 +38,26 @@ p {
   font-size: 18px;
 }
 
-select {
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px 0;
+}
+
+li {
   padding: 10px;
-  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin: 5px 0;
+  cursor: pointer;
+  background-color: #f9f9f9;
+}
+
+li:hover {
+  background-color: #e9ecef;
+}
+
+li.selected {
+  background-color: #007bff;
+  color: white;
 }
