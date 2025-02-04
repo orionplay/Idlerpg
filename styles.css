@@ -6,6 +6,7 @@ body {
   align-items: center;
   height: 100vh;
   margin: 0;
+  color: #000; /* Define a cor do texto como preto */
 }
 
 .container {
@@ -19,14 +20,14 @@ body {
 
 h1 {
   margin-bottom: 20px;
-  color: #5a5a5a;
+  color: #000; /* Define a cor do texto como preto */
 }
 
 button {
   padding: 10px;
   border: none;
   background-color: #87cefa;
-  color: white;
+  color: #000; /* Define a cor do texto como preto */
   border-radius: 5px;
   cursor: pointer;
 }
@@ -37,7 +38,7 @@ button:hover {
 
 p {
   font-size: 18px;
-  color: #5a5a5a;
+  color: #000; /* Define a cor do texto como preto */
 }
 
 ul {
@@ -45,6 +46,7 @@ ul {
   padding: 0;
   margin: 0 0 20px 0;
   font-size: 12px;
+  color: #000; /* Define a cor do texto como preto */
 }
 
 li {
@@ -55,6 +57,7 @@ li {
   display: flex;
   align-items: center;
   background-color: #fafafa;
+  color: #000; /* Define a cor do texto como preto */
 }
 
 li:hover {
@@ -69,6 +72,7 @@ label {
   border-radius: 50%;
   border: 2px solid #87cefa;
   margin-right: 10px;
+  color: #000; /* Define a cor do texto como preto */
 }
 
 li.selected label {
@@ -81,6 +85,7 @@ li.selected label {
   background-color: #e0e0e0;
   border-radius: 5px;
   margin: 0 10px;
+  color: #000; /* Define a cor do texto como preto */
 }
 
 .xp-bar-fill {
@@ -91,11 +96,14 @@ li.selected label {
 
 span {
   margin-right: 5px;
+  color: #000; /* Define a cor do texto como preto */
 }
 
 .tab {
   overflow: hidden;
   border-bottom: 1px solid #ccc;
+  background-color: #f2f2f2;
+  color: #000; /* Define a cor do texto como preto */
 }
 
 .tab button {
@@ -105,22 +113,26 @@ span {
   cursor: pointer;
   padding: 14px 16px;
   transition: 0.3s;
+  background-color: #e6e6e6;
+  color: #000; /* Define a cor do texto como preto */
 }
 
 .tab button:hover {
-  background-color: #f7f7f7;
+  background-color: #ddd;
 }
 
 .tab button.active {
-  background-color: #eee;
+  background-color: #ccc;
 }
 
 .tabcontent {
   display: none;
   padding: 6px 12px;
   border-top: none;
+  color: #000; /* Define a cor do texto como preto */
 }
 
 .money {
   margin-left: auto;
+  color: #000; /* Define a cor do texto como preto */
 }
